@@ -1,0 +1,497 @@
+* {
+    box-sizing: border-box;
+}
+html {
+    height: 100%;
+    color: rgb(117, 118, 136);
+    background-image: url(img/bg.jpg);
+}
+body {
+    height: calc(100% - 40px);
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(72, 114, 252);
+}
+ul {
+    margin: 0px;
+    padding: 0px;
+    color: rgb(86, 163, 252);
+    list-style: none;
+}
+ul span {
+    color: rgb(0, 0, 0);
+}
+ul li {
+    width: 50px;
+    height: 30px;
+    padding: 10px;
+    display: block;
+    border-bottom: 1px solid pink;
+    background-color: rgb(240, 240, 240);
+}
+ul li:hover {
+    background-color: rgb(235, 235, 235);
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0px;
+    white-space: nowrap;
+}
+tbody tr:nth-child(odd) {
+    background-color: rgba(250, 250, 250, 0.8);
+}
+tbody tr:nth-child(even) {
+    background-color: rgb(255, 255, 255);
+}
+
+#base-header {
+    max-height: 50px;
+    flex: auto;
+    background-color: rgb(224, 224, 224);
+}
+#base-main {
+    flex: auto;
+    display: flex;
+    position: relative;
+    max-height: 100%;
+}
+#object-box {
+    display: flex;
+    flex-direction: column;
+    flex: 12 1 auto;
+    width: 0px;
+    max-width: 180px;
+    border-right: 1px solid rgb(72, 114, 252);
+    user-select: none;
+}
+#attr-box {
+    display: flex;
+    flex-direction: column;
+    flex: 18 1 auto;
+    position: relative;
+    width: 0px;
+    max-width: 260px;
+    border-right: 1px solid rgb(72, 114, 252);
+}
+#right-box {
+    display: flex;
+    flex-direction: column;
+    flex: 70 1 auto;
+    position: relative;
+    width: 0px;
+}
+#top-right-box {
+    flex: auto;
+    display: flex;
+    height: 0px;
+}
+#anime-timeline-box {
+    display: flex;
+    position: relative;
+    flex: auto;
+    height: 0px;
+    max-height: 35%;
+    border-top: 1px solid rgb(72, 114, 252);
+}
+
+#object-box__header {
+    flex: 1 1 0;
+    max-height: 30px;
+    padding: 0px 0px 0px 10px;
+    background-color: rgb(123, 229, 255);
+}
+#object-box__header > span {
+    font-size: 20px;
+}
+#object-box__content {
+    position: relative;
+    flex: 1 1 0;
+    overflow-y: scroll;
+}
+#object-box__footer {
+    flex: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+    width: 100%;
+    max-height: 35px;
+    background-color: rgb(236, 236, 236);
+}
+
+#object-box__table tr {
+    position: relative;
+    height: 30px;
+    border-bottom: 1px solid rgb(228, 228, 228);
+}
+#object-box__table td {
+    position: relative;
+    padding: 0px 0px 0px 20px;
+}
+#object-box__table td:hover {
+    background-color: rgb(240, 240, 240);
+}
+#object-box__table .object-name-inputbox {
+    height: 30px;
+    width: 100%;
+    padding: 0px;
+    border: none;
+    outline: none;
+    color: inherit;
+    font: inherit;
+    background-color: transparent;
+}
+#object-box__table .object-name-inputbox:focus {
+    outline: 1px solid #66ccff;
+    outline-offset: 0px;
+    box-shadow: 0px 0px 3px #66ccff;
+}
+.type-name--text {
+    color: rgb(255, 156, 0);
+}
+.type-name--button {
+    color: rgb(0, 195, 255);
+}
+.type-name--path {
+    color: rgb(240, 123, 255);
+}
+.type-name--void {
+    color: rgb(175, 170, 218);
+}
+#object-box__hover-tool {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 30px;
+    width: 45%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#object-box__hover-tool.is-hidden {
+    display: none;
+}
+.object-box__new-obj-btn {
+    flex: none;
+    height: 25px;
+    color: rgb(102, 102, 102);
+    background-color: rgb(255, 255, 255);
+    border-radius: 3px;
+    border: 1px solid rgb(111, 173, 255);
+    margin: 0;
+    outline: none;
+    font-size: 15px;
+    font-weight: lighter;
+    text-align: center;
+    cursor: pointer;
+}
+.object-box__new-obj-btn:active {
+    background-color: rgb(240, 247, 255);
+    box-shadow: 0px 0px 3px #66ccff inset;
+}
+
+#attr-box__header {
+    height: 30px;
+    text-align: center;
+    background-color: rgb(123, 229, 255);
+}
+#attr-list-owner-name {
+    font-size: 20px;
+}
+#attr-box__content {
+    flex: auto;
+    width: 100%;
+    height: 0px;
+    min-height: 80%;
+    overflow-y: scroll;
+}
+.attr-table.is-hidden {
+    display: none;
+}
+.attr-table .attr-lable {
+    width: 50%;
+    text-align: center;
+}
+.attr-table .attr-lable--essential {
+    color: rgb(255, 0, 51);
+}
+.attr-table .attr-lable--common {
+    color: rgb(255, 162, 55);
+}
+.attr-table .attr-lable--border {
+    color: rgb(106, 42, 255);
+}
+.attr-table .attr-lable--other {
+    color: rgb(170, 42, 255);
+}
+.attr-table .attr-lable--fill {
+    color: rgb(41, 206, 123);
+}
+.attr-table .attr-lable--text {
+    color: rgb(17, 168, 255);
+}
+.attr-table .attr-inputbox-td {
+    padding: 0px;
+    text-align: center;
+}
+.attr-table tr {
+    height: 30px;
+    border-bottom: 1px solid rgb(228, 228, 228);
+}
+.attr-table tr:hover {
+    background-color: rgb(238, 238, 238);
+}
+.attr-table tr.is-changed-by-keyframe {
+    background-color: rgb(253, 228, 173);
+}
+.attr-table input {
+    height: 30px;
+    width: 100px;
+    padding: 0px;
+    border: none;
+    outline: none;
+    color: inherit;
+    font: inherit;
+    text-align: center;
+    background-color: transparent;
+}
+.attr-table input:hover {
+    outline: 1px solid #66ccff;
+    outline-offset: 0px;
+}
+.attr-table input:focus {
+    outline: 1px solid #66ccff;
+    outline-offset: 0px;
+    box-shadow: 0px 0px 3px #66ccff;
+}
+.attr-table input.is-defalt {
+    color: rgb(200, 200, 200);
+}
+
+#attr-info-box {
+    flex: auto;
+    width: 100%;
+    border-top: 1px solid rgb(72, 114, 252);
+}
+
+#anime-timeline-box__left {
+    flex: none;
+    display: inline-block;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+#anime-timeline-box__content {
+    flex: 1 1 0;
+    width: 0px;
+    display: inline-block;
+    overflow-x: scroll;
+    overflow-y: scroll;
+}
+#anime-timeline-box tr:hover {
+    background-color: rgb(240, 240, 240);
+}
+#anime-timeline-box thead tr {
+    height: 30px;
+    border-bottom: 1px solid rgb(206, 206, 206);
+}
+#anime-timeline-box tbody tr {
+    height: 30px;
+    border-bottom: 1px solid rgb(228, 228, 228);
+}
+#anime-timeline-box__left-table {
+    width: 80px;
+    border-right: 1px solid rgb(72, 114, 252);
+}
+#anime-timeline-box__left-table td {
+    position: relative;
+    padding: 0px 10px;
+}
+#anime-timeline-box__left-table thead span {
+    font-size: 20px;
+}
+#anime-timeline-box__content-table {
+    min-width: 300%;
+}
+#anime-timeline-box__content-table td {
+    position: relative;
+    padding: 0px;
+    white-space: nowrap;
+}
+
+#anime-timeline-box__content-table tbody td:nth-child(1) > div {
+    /* float: left; */
+    display: inline-block;
+    height: 28px;
+    width: 2px;
+    border: 1px solid blue;
+    border-radius: 5px;
+}
+/* #anime-timeline-box__content-table td:first-child {
+    width: 60px;
+    position: sticky;
+    left: 0px;
+    border: 1px solid hotpink;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+#anime-timeline-box__content-table td:first-child span {
+    margin-left: -60px;
+} */
+#anime-timeline-box__hover-tool-td {
+    position: sticky !important;
+    top: 0px;
+    right: 0px;
+    height: 30px;
+    width: 0px;
+}
+#anime-timeline-box__hover-tool {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 30px;
+    width: 60px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#anime-timeline-box__hover-tool.is-hidden {
+    display: none;
+}
+
+#anime-list-box {
+    position: relative;
+    flex: auto;
+    max-width: 30%;
+    border-right: 1px solid rgb(111, 173, 255);
+    overflow-y: scroll;
+}
+#anime-list-box__hover-tool-td {
+    position: sticky !important;
+    top: 0px;
+    right: 0px;
+    height: 30px;
+    width: 0px;
+}
+#btn--show-anime-list-box-hover-tool {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+#btn--show-anime-list-box-hover-tool.is-hidden {
+    display: none;
+}
+#anime-list-box__hover-tool {
+    position: absolute;
+    top: 0px;
+    right: 25px;
+    height: 30px;
+    width: 70px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#anime-list-box__hover-tool.is-hidden {
+    display: none;
+}
+#anime-list-box tr {
+    position: relative;
+    height: 30px;
+    border-bottom: 1px solid rgb(228, 228, 228);
+    text-align: center;
+}
+#anime-list-box tr:hover {
+    background-color: rgb(238, 238, 238);
+}
+#anime-list-box td {
+    position: relative;
+    padding: 0px;
+}
+#anime-list-box th:first-child {
+    width: 15%;
+}
+#anime-list-box th:nth-child(2) {
+    width: 40%;
+}
+#anime-list-box tbody td:first-child {
+    width: 15%;
+}
+#anime-list-box tbody td:nth-child(2) {
+    width: 40%;
+}
+#anime-list-box__table input {
+    height: 30px;
+    width: 80%;
+    padding: 0px;
+    border: none;
+    outline: none;
+    color: inherit;
+    font: inherit;
+    text-align: center;
+    background-color: transparent;
+}
+#anime-list-box__table input:hover {
+    outline: 1px solid #66ccff;
+    outline-offset: 0px;
+}
+#anime-list-box__table input:focus {
+    outline: 1px solid #66ccff;
+    outline-offset: 0px;
+    box-shadow: 0px 0px 3px #66ccff;
+}
+#anime-list-box__table input.is-defalt {
+    color: rgb(200, 200, 200);
+}
+#anime-list-box__header {
+    height: 30px;
+    text-align: center;
+    background-color: rgb(123, 229, 255);
+}
+#anime-list-owner-name {
+    font-size: 20px;
+}
+#view-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: auto;
+}
+#view-box-child{
+    flex: none;
+    position: relative;
+    width: 100%;
+    height:0;
+    padding-top: 56.25%;
+}
+#view-box-child2{
+    position: absolute;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+}
+
+.hover-tool-btn {
+    flex: none;
+    height: 20px;
+    width: 20px;
+    padding: 1px;
+    color: rgb(100, 100, 100);
+    background-color: rgb(255, 255, 255);
+    border-radius: 3px;
+    border: 1px solid rgb(111, 173, 255);
+    margin: 0;
+    outline: none;
+    font-size: 16px;
+    font-weight: lighter;
+    text-align: center;
+    cursor: pointer;
+}
+.hover-tool-btn:active {
+    background-color: rgb(240, 247, 255);
+    box-shadow: 0px 0px 3px #66ccff inset;
+}
+#bas-iframe{
+    height: 100%;
+    width: 100%;
+}
